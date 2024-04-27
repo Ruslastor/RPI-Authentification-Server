@@ -3,7 +3,5 @@
 
 <h2>Hardware</h2>
 <p>The server is going to have:</p>
-<li>
-  <ul>hopa</ul>
-  <ul>hopa</ul>
-</li>
+<li>hopa</li>
+<li>hopa</li>
