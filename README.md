@@ -8,14 +8,17 @@
 <p>Raspberry Pi 4 will run a Flask http server, to receive the requests. Then, by using random number generator, it will generate the code. The SMS will be sent by SIM7022 module, it will be configured and controlled by AT commands from Raspberry Pi 4 via UART interface.</p>
 <h3>The server is going to have:</h3>
 <li>Raspberry Pi 4</li>
-<p>The main processing unit. As soon as it has a wi-fi module, it is possible to run an HTTP server on it. The server will be running python Flask HTTP server. There will be initialised 2 interfaces: UART(for GSM module) and 4 pin SPI(for display)</p>
+<p>The main processing unit. As soon as it has a wi-fi module, it is possible to run an HTTP server on it. The server will be running python Flask HTTP server. There will be initialised 3 interfaces: UART(for GSM module), 4 pin SPI(for MCP3001 ADC) and I2C(for LCD display)</p>
 <li>SIM7022</li>
 <p>The module for sending SMS. It was chosen for low power consumption, LTE, 5G and 4G support. The module will be controlled vie UART interface using AT commands.</p>
 <li>Battery pack</li>
 <p>The 2S connection of Li-Ion 18650 batteries. Used, to make an emergency power supply in case of loose of socket energy</p>
 <li>LCD display</li>
-<p>For optimization purposes, the Raspberry Pi will have Raspbean installed without graphical UI. So, LCD display to show some data (battery charging level and external power supply existance)</p>
+<p>For optimization purposes, the Raspberry Pi will have Raspbean installed without graphical UI. So, LCD display to show some data (battery charging level and external power supply existence). It will be controlled through the I2C interface.</p>
+<li>MCP3001</li>
+<p>This is single channel ADC. This is needed to measure the voltage on the batteries. </p>
+
 
 <h3>Other:</h3>
 <li>Power</li>
-<p>The server will have 3 buck step-down converters. Single 5V 15W for Raspberry Pi only, 3.3V for SIM7022 module, and additional 5V one for feeding pariferials, like fan for cooling the Raspberry Pi. BMS for powering and voltage requirement control of battery pack. The power will be taken from 12V 4A power supply, as soon as power supplies with 5V for desired power requirements (25W).</p>
+<p>The server will have 3 buck step-down converters. Single 5V 15W for Raspberry Pi only, 3.3V for SIM7022 module and MCP3001 ADC, and additional 5V one for feeding pariferials, like fan for cooling the Raspberry Pi. BMS for powering and voltage requirement control of battery pack. The power will be taken from 12V 4A power supply, as soon as power supplies with 5V for desired power requirements (25W).</p>
