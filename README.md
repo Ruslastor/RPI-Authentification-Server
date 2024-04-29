@@ -16,9 +16,11 @@
 <li>LCD display</li>
 <p>For optimization purposes, the Raspberry Pi will have Raspbean installed without graphical UI. So, LCD display to show some data (battery charging level and external power supply existence). It will be controlled through the I2C interface.</p>
 <li>MCP3001</li>
-<p>This is single channel ADC. This is needed to measure the voltage on the batteries. </p>
-
+<p>This is single channel ADC. This is needed to measure the voltage on the batteries. This uses the SPI interface to send the data to Raspberry.</p>
 
 <h3>Other:</h3>
 <li>Power</li>
 <p>The server will have 3 buck step-down converters. Single 5V 15W for Raspberry Pi only, 3.3V for SIM7022 module and MCP3001 ADC, and additional 5V one for feeding pariferials, like fan for cooling the Raspberry Pi. BMS for powering and voltage requirement control of battery pack. The power will be taken from 12V 4A power supply, as soon as power supplies with 5V for desired power requirements (25W).</p>
+
+<h2>Schematics</h2>
+
